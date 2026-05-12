@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Terraço FC</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #FF6500;
+            --black: #080808;
+            --gray: #181818;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Barlow', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-card {
+            background: var(--gray);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 101, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--orange);
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #000;
+            color: white;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: var(--orange);
+            border: none;
+            border-radius: 6px;
+            color: black;
+            font-weight: bold;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #ff8533;
+            transform: translateY(-2px);
+        }
+
+        #mensagem {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Acesso Atleta</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="********" required>
+            </div>
+            <button type="submit" class="btn-login">ENTRAR NO TERRAÇO</button>
+        </form>
+        <div id="mensagem"></div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const mensagemDiv = document.getElementById('mensagem');
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, senha })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    mensagemDiv.style.color = "#25D366";
+                    mensagemDiv.innerText = "Login realizado! Redirecionando...";
+                    // Aqui você pode salvar o token ou nome no localStorage
+                    localStorage.setItem('usuario', data.usuario.nome);
+                    setTimeout(() => window.location.href = "/", 2000); 
+                } else {
+                    mensagemDiv.style.color = "#ff4444";
+                    mensagemDiv.innerText = data.erro || "Erro ao logar.";
+                }
+            } catch (err) {
+                mensagemDiv.innerText = "Erro ao conectar com o servidor.";
+            }
+        });
+    </script>
+</body>
+</html>

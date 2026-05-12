@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Terraço FC – Escolinha de Futebol | Pompeia, SP</title>
+<meta name="description" content="Escolinha de futebol Terraço FC em Pompeia, SP. Formando atletas e cidadãos através do futebol."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+/* ===================== RESET & VARS ===================== */
+:root{
+  --black:#080808;--black2:#111;--black3:#181818;--black4:#222;
+  --orange:#FF6500;--orange2:#ff8533;--orange3:#cc5200;
+  --oglow:rgba(255,101,0,.18);--oglow2:rgba(255,101,0,.07);
+  --white:#fff;--gray:#aaa;--gray2:#666;--card:#141414;
+  --border:rgba(255,101,0,.2);--radius:12px;
+  --df:'Bebas Neue',sans-serif;
+  --dc:'Barlow Condensed',sans-serif;
+  --db:'Barlow',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--black);color:var(--white);font-family:var(--db);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+::selection{background:var(--orange);color:#000}
+ 
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--black2)}
+::-webkit-scrollbar-thumb{background:var(--orange);border-radius:4px}
+ 
+/* ===================== UTILS ===================== */
+.container{width:min(1200px,94vw);margin-inline:auto}
+.section{padding-block:100px}
+.section-sm{padding-block:60px}
+.tag{display:inline-block;font-family:var(--dc);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);padding:4px 14px;border:1px solid var(--border);border-radius:30px;background:var(--oglow2)}
+.sec-head{text-align:center;margin-bottom:60px}
+.sec-head h2{font-family:var(--df);font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:.03em;margin-top:12px;line-height:1}
+.sec-head h2 span{color:var(--orange)}
+.sec-head p{color:var(--gray);max-width:520px;margin:14px auto 0;font-size:.95rem}
+.divider{width:50px;height:3px;background:linear-gradient(90deg,var(--orange),transparent);margin:16px auto 0}
+ 
+/* ===================== BUTTONS ===================== */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--dc);font-size:1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 30px;border-radius:6px;cursor:pointer;border:2px solid transparent;transition:all .25s ease;position:relative;overflow:hidden;white-space:nowrap}
+.btn-primary{background:var(--orange);color:#000;box-shadow:0 4px 24px rgba(255,101,0,.35)}
+.btn-primary:hover{background:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 36px rgba(255,101,0,.5)}
+.btn-outline{border-color:var(--orange);color:var(--orange);background:transparent}
+.btn-outline:hover{background:var(--orange);color:#000}
+.btn-wpp{background:#25D366;color:#fff;border-color:transparent;box-shadow:0 4px 24px rgba(37,211,102,.25)}
+.btn-wpp:hover{background:#1fb359;transform:translateY(-2px)}
+ 
+/* ===================== NAVBAR ===================== */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:all .35s}
+#navbar.scrolled{background:rgba(8,8,8,.95);backdrop-filter:blur(20px);padding:10px 0;border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.logo-badge{width:46px;height:46px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(255,101,0,.5);flex-shrink:0;animation:pulse-logo 3s ease-in-out infinite}
+@keyframes pulse-logo{0%,100%{box-shadow:0 0 24px rgba(255,101,0,.5)}50%{box-shadow:0 0 40px rgba(255,101,0,.8)}}
+.logo-badge svg{width:28px;height:28px}
+.logo-text strong{display:block;font-family:var(--df);font-size:1.3rem;letter-spacing:.06em;line-height:1}
+.logo-text span{font-family:var(--dc);font-size:.65rem;font-weight:700;color:var(--orange);letter-spacing:.14em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-family:var(--dc);font-size:.88rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--gray);transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--orange);transition:width .25s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;gap:10px}
+#menu-btn{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
+#mobile-menu{display:none;position:fixed;inset:0;background:rgba(8,8,8,.97);backdrop-filter:blur(30px);z-index:999;padding:90px 32px 32px;flex-direction:column;gap:8px}
+#mobile-menu.open{display:flex}
+#close-menu{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--white);font-size:1.6rem;cursor:pointer}
+#mobile-menu a{font-family:var(--dc);font-size:2rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:18px;padding-top:8px;transition:color .2s}
+#mobile-menu a:hover{color:var(--orange)}
+#mobile-menu .mob-cta{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+ 
+/* ===================== HERO ===================== */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 65% 55%,rgba(255,101,0,.1) 0%,transparent 65%),linear-gradient(135deg,#080808 0%,#101010 60%,#080808 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,101,0,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,101,0,.035) 1px,transparent 1px);background-size:60px 60px}
+.hero-orb{position:absolute;right:10%;top:20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,101,0,.08),transparent 70%);pointer-events:none}
+.hero-ring1{position:absolute;right:8%;top:16%;width:560px;height:560px;border-radius:50%;border:1px solid rgba(255,101,0,.12);animation:rotate-ring 25s linear infinite}
+.hero-ring2{position:absolute;right:4%;top:10%;width:680px;height:680px;border-radius:50%;border:1px solid rgba(255,101,0,.06);animation:rotate-ring 40s linear infinite reverse}
+@keyframes rotate-ring{to{transform:rotate(360deg)}}
+.hero-content{position:relative;z-index:2;max-width:680px;padding-top:80px}
+.hero-eyebrow{font-family:var(--dc);font-size:.82rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:18px;display:flex;align-items:center;gap:12px;opacity:0;animation:fade-up .6s ease .2s forwards}
+.hero-eyebrow::before{content:'';display:block;width:40px;height:2px;background:var(--orange)}
+.hero-title{font-family:var(--df);font-size:clamp(3.2rem,8vw,6.5rem);line-height:.93;letter-spacing:.02em;margin-bottom:22px;opacity:0;animation:fade-up .6s ease .35s forwards}
+.hero-title .hl{color:var(--orange)}
+.hero-sub{font-size:1.05rem;color:var(--gray);max-width:460px;margin-bottom:36px;line-height:1.75;opacity:0;animation:fade-up .6s ease .5s forwards}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px;opacity:0;animation:fade-up .6s ease .65s forwards}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap;opacity:0;animation:fade-up .6s ease .8s forwards}
+.hs-num{font-family:var(--df);font-size:2.2rem;color:var(--orange);line-height:1}
+.hs-label{font-family:var(--dc);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-top:2px}
+.hero-seal{position:absolute;right:6%;top:50%;transform:translateY(-50%);z-index:2;width:150px;height:150px;display:none}
+@keyframes fade-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px}
+.scroll-hint span{font-family:var(--dc);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gray2)}
+.scroll-bar{width:2px;height:38px;background:linear-gradient(to bottom,var(--orange),transparent);animation:sc-pulse 1.6s ease-in-out infinite}
+@keyframes sc-pulse{0%,100%{opacity:.4;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+ 
+/* ===================== STATS STRIP ===================== */
+#strip{background:var(--orange);padding:18px 0;overflow:hidden}
+.strip-inner{display:flex;align-items:center;flex-wrap:wrap;justify-content:center}
+.strip-item{display:flex;align-items:center;gap:16px;padding:8px 40px;border-right:1px solid rgba(0,0,0,.18)}
+.strip-item:last-child{border-right:none}
+.strip-item .sn{font-family:var(--df);font-size:2rem;color:#000;line-height:1}
+.strip-item .sl{font-family:var(--dc);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.55)}
+.strip-item i{font-size:1.6rem;color:rgba(0,0,0,.35)}
+ 
+/* ===================== SOBRE ===================== */
+#sobre{background:var(--black2)}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.sobre-visual{position:relative}
+.sobre-main-img{aspect-ratio:3/4;background:var(--black3);border-radius:var(--radius);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;color:var(--gray2);overflow:hidden;position:relative}
+.sobre-main-img::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at bottom right,rgba(255,101,0,.2),transparent 60%)}
+.sobre-main-img i{font-size:5rem;color:var(--orange);opacity:.3}
+.sobre-main-img span{font-family:var(--dc);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;opacity:.5}
+.float-badge{position:absolute;bottom:-18px;right:-18px;background:var(--orange);color:#000;padding:18px 22px;border-radius:var(--radius);box-shadow:0 8px 32px rgba(255,101,0,.4)}
+.float-badge strong{display:block;font-family:var(--df);font-size:2rem;line-height:1}
+.float-badge span{font-family:var(--dc);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.float-corner{position:absolute;top:-18px;right:-24px;width:130px;height:130px;background:var(--black3);border:1px solid var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center}
+.float-corner i{font-size:2.6rem;color:var(--orange);opacity:.5}
+.sobre-text h2{font-family:var(--df);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1;margin-bottom:16px}
+.sobre-text h2 span{color:var(--orange)}
+.sobre-text p{color:var(--gray);margin-bottom:14px;line-height:1.8;font-size:.95rem}
+.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.mvv-card{background:var(--black3);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:border-color .25s,transform .25s}
+.mvv-card:hover{border-color:var(--orange);transform:translateY(-3px)}
+.mvv-card h4{font-family:var(--dc);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+.mvv-card p{font-size:.83rem;color:var(--gray);line-height:1.55;margin:0}
+.valores{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.val-chip{display:flex;align-items:center;gap:7px;background:var(--black3);border:1px solid var(--border);border-radius:30px;padding:7px 14px;font-family:var(--dc);font-size:.82rem;font-weight:600;letter-spacing:.04em;transition:all .2s;cursor:default}
+.val-chip:hover{background:var(--orange);color:#000;border-color:var(--orange)}
+.val-chip i{color:var(--orange);font-size:.85rem}
+.val-chip:hover i{color:#000}
+ 
+/* ===================== TIMELINE ===================== */
+#timeline{background:var(--black)}
+.tl-track{position:relative;max-width:720px;margin:0 auto;padding-left:48px}
+.tl-track::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--orange),transparent)}
+.tl-item{position:relative;padding-bottom:40px;opacity:0;transform:translateX(-20px);transition:all .5s ease}
+.tl-item.visible{opacity:1;transform:translateX(0)}
+.tl-dot{position:absolute;left:-40px;top:4px;width:30px;height:30px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--dc);font-size:.55rem;font-weight:700;box-shadow:0 0 16px rgba(255,101,0,.5)}
+.tl-year{font-family:var(--dc);font-size:.75rem;font-weight:700;color:var(--orange);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.tl-title{font-family:var(--dc);font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.tl-desc{font-size:.88rem;color:var(--gray)}
+ 
+/* ===================== COMISSÃO ===================== */
+#comissao{background:var(--black2)}
+.coaches{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.coach-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .3s;cursor:pointer;opacity:0;transform:translateY(20px);transition:opacity .4s,transform .4s,border-color .3s,box-shadow .3s}
+.coach-card.visible{opacity:1;transform:translateY(0)}
+.coach-card:hover{border-color:var(--orange);transform:translateY(-6px)!important;box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 40px rgba(255,101,0,.1)}
+.coach-photo{aspect-ratio:4/3;background:var(--black3);position:relative;overflow:hidden}
+.coach-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(8,8,8,.9));z-index:1}
+.coach-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.coach-icon i{font-size:5rem;color:var(--orange);opacity:.25}
+.coach-cat{position:absolute;top:14px;left:14px;z-index:2}
+.coach-body{padding:20px}
+.coach-name{font-family:var(--dc);font-size:1.2rem;font-weight:700;letter-spacing:.03em;margin-bottom:4px}
+.coach-role{font-family:var(--dc);font-size:.78rem;font-weight:600;color:var(--orange);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.coach-quote{font-size:.85rem;color:var(--gray);font-style:italic;border-left:2px solid var(--orange);padding-left:12px;margin-bottom:14px;line-height:1.6}
+.coach-badges{display:flex;flex-wrap:wrap;gap:6px}
+.coach-badge{font-family:var(--dc);font-size:.72rem;font-weight:700;letter-spacing:.06em;background:var(--black3);border:1px solid var(--border);border-radius:30px;padding:4px 10px;color:var(--gray)}
+ 
+/* ===================== CATEGORIAS ===================== */
+#categorias{background:var(--black)}
+.cats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.cat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 22px;position:relative;overflow:hidden;transition:all .3s;opacity:0;transform:translateY(20px)}
+.cat-card.visible{opacity:1;transform:translateY(0)}
+.cat-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top left,rgba(255,101,0,.06),transparent 60%);opacity:0;transition:opacity .3s}
+.cat-card:hover{border-color:var(--orange);transform:translateY(-5px)!important}
+.cat-card:hover::before{opacity:1}
+.cat-num{font-family:var(--df);font-size:3.5rem;color:var(--orange);line-height:1;opacity:.15;position:absolute;top:16px;right:20px;transition:opacity .3s}
+.cat-card:hover .cat-num{opacity:.25}
+.cat-label{font-family:var(--df);font-size:1.6rem;letter-spacing:.03em;margin-bottom:4px}
+.cat-age{font-family:var(--dc);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.cat-info{display:flex;flex-direction:column;gap:8px}
+.cat-row{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;color:var(--gray)}
+.cat-row i{color:var(--orange);font-size:.85rem;margin-top:3px;flex-shrink:0}
+.cat-obj{margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.cat-obj h5{font-family:var(--dc);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.cat-obj-tags{display:flex;flex-wrap:wrap;gap:6px}
+.cat-obj-tags span{font-size:.75rem;background:var(--black3);border:1px solid var(--border);border-radius:20px;padding:3px 10px;color:var(--gray)}
+ 
+/* ===================== GALERIA ===================== */
+#galeria{background:var(--black2)}
+.gallery-filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.gf-btn{font-family:var(--dc);font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 20px;border-radius:30px;background:var(--black3);border:1px solid var(--border);color:var(--gray);cursor:pointer;transition:all .2s}
+.gf-btn.active,.gf-btn:hover{background:var(--orange);color:#000;border-color:var(--orange)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery-item{aspect-ratio:1;border-radius:var(--radius);background:var(--black3);border:1px solid var(--border);overflow:hidden;position:relative;cursor:pointer;transition:all .3s}
+.gallery-item.wide{grid-column:span 2}
+.gallery-item.tall{grid-row:span 2}
+.gallery-item:hover{border-color:var(--orange);transform:scale(1.02);z-index:2}
+.gallery-item:hover .g-overlay{opacity:1}
+.g-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
+.g-inner i{font-size:3rem;color:var(--orange);opacity:.2}
+.g-inner span{font-family:var(--dc);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray2)}
+.g-overlay{position:absolute;inset:0;background:rgba(255,101,0,.85);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s;z-index:1}
+.g-overlay i{font-size:2rem;color:#000}
+.carousel-wrap{margin-top:48px}
+.carousel-wrap h3{font-family:var(--df);font-size:1.6rem;text-align:center;margin-bottom:20px}
+.carousel-wrap h3 span{color:var(--orange)}
+.carousel{display:flex;gap:16px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.carousel::-webkit-scrollbar{height:4px}
+.carousel::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px}
+.carousel-item{flex-shrink:0;width:260px;aspect-ratio:3/4;background:var(--black3);border-radius:var(--radius);border:1px solid var(--border);scroll-snap-align:start;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--gray2)}
+.carousel-item i{font-size:2.5rem;color:var(--orange);opacity:.3}
+.carousel-item span{font-family:var(--dc);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;opacity:.5}
+ 
+/* ===================== CONQUISTAS ===================== */
+#conquistas{background:var(--black)}
+.trofeus{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:60px}
+.trofeu-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;transition:all .3s;opacity:0;transform:translateY(20px)}
+.trofeu-card.visible{opacity:1;transform:translateY(0)}
+.trofeu-card:hover{border-color:var(--orange);transform:translateY(-5px)!important;box-shadow:0 12px 40px rgba(255,101,0,.15)}
+.trofeu-icon{width:64px;height:64px;background:var(--oglow);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;color:var(--orange)}
+.trofeu-year{font-family:var(--dc);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+.trofeu-name{font-family:var(--dc);font-size:1rem;font-weight:700;margin-bottom:4px}
+.trofeu-desc{font-size:.82rem;color:var(--gray)}
+.jogador-mes{background:var(--black2);border:1px solid var(--border);border-radius:16px;padding:40px;display:flex;align-items:center;gap:48px;flex-wrap:wrap}
+.jm-icon{width:120px;height:120px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#000;flex-shrink:0;box-shadow:0 0 40px rgba(255,101,0,.4)}
+.jm-content h3{font-family:var(--df);font-size:1.8rem;margin-bottom:4px}
+.jm-content h3 span{color:var(--orange)}
+.jm-player{font-family:var(--df);font-size:2.4rem;color:var(--orange);margin-bottom:8px}
+.jm-content p{color:var(--gray);font-size:.9rem;max-width:400px}
+.jm-stats{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap}
+.jm-stat .jn{font-family:var(--df);font-size:2rem;color:var(--orange);line-height:1}
+.jm-stat .jl{font-family:var(--dc);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+ 
+/* ===================== NOTICIAS ===================== */
+#noticias{background:var(--black2)}
+.news-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+.news-main{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .25s;cursor:pointer}
+.news-main:hover{border-color:var(--orange)}
+.news-img{aspect-ratio:16/8;background:var(--black3);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.news-img::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(8,8,8,.8))}
+.news-img i{font-size:4rem;color:var(--orange);opacity:.2}
+.news-body{padding:24px}
+.news-cat{margin-bottom:10px}
+.news-body h3{font-family:var(--dc);font-size:1.3rem;font-weight:700;margin-bottom:8px;line-height:1.3}
+.news-body p{font-size:.88rem;color:var(--gray);margin-bottom:14px}
+.news-meta{font-family:var(--dc);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gray2);display:flex;align-items:center;gap:16px}
+.news-meta i{color:var(--orange)}
+.news-side{display:flex;flex-direction:column;gap:16px}
+.news-sm{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;display:flex;gap:14px;cursor:pointer;transition:border-color .25s}
+.news-sm:hover{border-color:var(--orange)}
+.news-sm-img{width:72px;height:72px;background:var(--black3);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.news-sm-img i{font-size:1.6rem;color:var(--orange);opacity:.3}
+.news-sm-body h4{font-family:var(--dc);font-size:.95rem;font-weight:700;line-height:1.3;margin-bottom:4px}
+.news-sm-body span{font-family:var(--dc);font-size:.72rem;letter-spacing:.06em;color:var(--gray2);text-transform:uppercase}
+ 
+/* ===================== AGENDA ===================== */
+#agenda{background:var(--black)}
+.agenda-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.agenda-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;display:flex;align-items:flex-start;gap:18px;transition:all .25s;opacity:0;transform:translateY(16px)}
+.agenda-card.visible{opacity:1;transform:translateY(0)}
+.agenda-card:hover{border-color:var(--orange);transform:translateY(-4px)!important}
+.ag-date{text-align:center;flex-shrink:0;background:var(--black3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;min-width:60px}
+.ag-day{font-family:var(--df);font-size:1.8rem;color:var(--orange);line-height:1}
+.ag-month{font-family:var(--dc);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+.ag-content h4{font-family:var(--dc);font-size:1rem;font-weight:700;margin-bottom:4px}
+.ag-content p{font-size:.84rem;color:var(--gray)}
+.ag-content .ag-meta{display:flex;gap:14px;margin-top:8px;font-family:var(--dc);font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;color:var(--gray2)}
+.ag-content .ag-meta i{color:var(--orange)}
+.ag-badge{align-self:flex-start;font-family:var(--dc);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:30px;white-space:nowrap}
+.ag-badge.jogo{background:rgba(255,101,0,.15);border:1px solid rgba(255,101,0,.3);color:var(--orange)}
+.ag-badge.camp{background:rgba(255,193,7,.12);border:1px solid rgba(255,193,7,.3);color:#ffc107}
+.ag-badge.pene{background:rgba(76,175,80,.12);border:1px solid rgba(76,175,80,.3);color:#4caf50}
+.ag-badge.fest{background:rgba(33,150,243,.12);border:1px solid rgba(33,150,243,.3);color:#2196f3}
+ 
+/* ===================== MATRÍCULA ===================== */
+#matricula{background:var(--black2)}
+.form-wrap{max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:48px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-family:var(--dc);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.form-group input,.form-group select,.form-group textarea{background:var(--black3);border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--white);font-family:var(--db);font-size:.9rem;outline:none;transition:border-color .2s;width:100%}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--gray2)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--orange)}
+.form-group select{appearance:none;cursor:pointer}
+.form-group select option{background:var(--black3)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-actions{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+.form-note{grid-column:1/-1;font-size:.82rem;color:var(--gray2);display:flex;align-items:center;gap:8px;margin-top:4px}
+.form-note i{color:var(--orange)}
+.form-success{display:none;text-align:center;padding:40px}
+.form-success i{font-size:4rem;color:var(--orange);margin-bottom:16px}
+.form-success h3{font-family:var(--df);font-size:2rem;margin-bottom:8px}
+.form-success p{color:var(--gray)}
+ 
+/* ===================== DEPOIMENTOS ===================== */
+#depoimentos{background:var(--black)}
+.dep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.dep-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .3s;opacity:0;transform:translateY(20px)}
+.dep-card.visible{opacity:1;transform:translateY(0)}
+.dep-card:hover{border-color:var(--orange);transform:translateY(-4px)!important}
+.dep-stars{color:var(--orange);font-size:.9rem;margin-bottom:14px;letter-spacing:2px}
+.dep-text{font-size:.9rem;color:var(--gray);line-height:1.75;margin-bottom:20px;font-style:italic}
+.dep-author{display:flex;align-items:center;gap:12px}
+.dep-avatar{width:44px;height:44px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--df);font-size:1.1rem;color:#000;flex-shrink:0}
+.dep-info strong{display:block;font-family:var(--dc);font-size:.95rem;font-weight:700}
+.dep-info span{font-size:.78rem;color:var(--gray2)}
+ 
+/* ===================== LOCALIZAÇÃO ===================== */
+#localizacao{background:var(--black2)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.map-box{background:var(--black3);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;position:relative}
+.map-box iframe{width:100%;height:100%;border:none;filter:grayscale(80%) invert(90%) hue-rotate(180deg) brightness(.8)}
+.map-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--gray2)}
+.map-placeholder i{font-size:4rem;color:var(--orange);opacity:.3}
+.loc-info h3{font-family:var(--df);font-size:1.8rem;margin-bottom:24px}
+.loc-info h3 span{color:var(--orange)}
+.loc-items{display:flex;flex-direction:column;gap:16px}
+.loc-item{display:flex;align-items:flex-start;gap:16px;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);transition:border-color .25s}
+.loc-item:hover{border-color:var(--orange)}
+.loc-item-icon{width:40px;height:40px;background:var(--oglow);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0}
+.loc-item h5{font-family:var(--dc);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:3px}
+.loc-item p{font-size:.88rem;color:var(--gray)}
+.loc-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+ 
+/* ===================== REDES SOCIAIS ===================== */
+#redes{background:var(--black)}
+.redes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.rede-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;transition:all .3s;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px}
+.rede-card:hover{transform:translateY(-6px);border-color:var(--c)}
+.rede-icon{width:60px;height:60px;border-radius:50%;background:var(--oglow);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--c);transition:background .25s}
+.rede-card:hover .rede-icon{background:var(--c);color:#fff}
+.rede-card h4{font-family:var(--dc);font-size:1rem;font-weight:700;letter-spacing:.04em}
+.rede-card span{font-family:var(--dc);font-size:.8rem;color:var(--gray);letter-spacing:.06em}
+.feed-strip{margin-top:48px}
+.feed-strip h3{font-family:var(--df);font-size:1.6rem;text-align:center;margin-bottom:20px}
+.feed-strip h3 span{color:var(--orange)}
+.feed-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.feed-item{aspect-ratio:1;background:var(--black3);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
+.feed-item:hover{border-color:var(--orange);transform:scale(1.04)}
+.feed-item i{font-size:1.6rem;color:var(--orange);opacity:.25}
+.feed-item::after{content:'';position:absolute;inset:0;background:rgba(255,101,0,.6);opacity:0;transition:opacity .2s;display:flex;align-items:center;justify-content:center}
+.feed-item:hover::after{opacity:1}
+ 
+/* ===================== WHATSAPP FLOAT ===================== */
+#wpp-float{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wpp-btn{width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#fff;box-shadow:0 6px 24px rgba(37,211,102,.4);cursor:pointer;transition:all .25s;animation:wpp-bounce 2s ease-in-out infinite}
+.wpp-btn:hover{transform:scale(1.1);box-shadow:0 10px 36px rgba(37,211,102,.6)}
+@keyframes wpp-bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.wpp-tooltip{background:var(--black2);border:1px solid rgba(37,211,102,.3);border-radius:8px;padding:8px 14px;font-family:var(--dc);font-size:.82rem;font-weight:600;color:#fff;white-space:nowrap;opacity:0;transform:translateX(10px);transition:all .25s;pointer-events:none}
+#wpp-float:hover .wpp-tooltip{opacity:1;transform:translateX(0)}
+.wpp-pulse{position:absolute;width:58px;height:58px;border-radius:50%;background:rgba(37,211,102,.3);animation:wpp-pulse 2s ease-out infinite}
+@keyframes wpp-pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}
+ 
+/* ===================== FOOTER ===================== */
+#footer{background:var(--black2);border-top:1px solid var(--border);padding:60px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo-badge{width:52px;height:52px;margin-bottom:14px}
+.footer-brand p{font-size:.88rem;color:var(--gray);margin-top:10px;max-width:280px;line-height:1.7}
+.footer-brand .soc{display:flex;gap:12px;margin-top:20px}
+.footer-brand .soc a{width:36px;height:36px;background:var(--black3);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray);transition:all .2s}
+.footer-brand .soc a:hover{background:var(--orange);border-color:var(--orange);color:#000}
+.footer-col h5{font-family:var(--dc);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.footer-col a{display:block;font-size:.88rem;color:var(--gray);margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;font-size:.82rem;color:var(--gray2);gap:12px}
+.footer-bottom span i{color:var(--orange)}
+ 
+/* ===================== LIGHTBOX ===================== */
+#lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:2000;align-items:center;justify-content:center}
+#lightbox.open{display:flex}
+.lb-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--white);font-size:2rem;cursor:pointer;transition:color .2s}
+.lb-close:hover{color:var(--orange)}
+.lb-content{text-align:center;max-width:600px;padding:40px}
+.lb-icon{font-size:6rem;color:var(--orange);opacity:.3;margin-bottom:20px}
+.lb-title{font-family:var(--df);font-size:2rem;margin-bottom:8px}
+.lb-sub{color:var(--gray);font-size:.9rem}
+ 
+/* ===================== TOAST ===================== */
+#toast{position:fixed;bottom:100px;right:28px;z-index:3000;background:var(--orange);color:#000;font-family:var(--dc);font-size:.9rem;font-weight:700;letter-spacing:.06em;padding:12px 22px;border-radius:8px;transform:translateY(20px);opacity:0;transition:all .3s;pointer-events:none;display:flex;align-items:center;gap:8px}
+#toast.show{transform:translateY(0);opacity:1}
+ 
+/* ===================== LOADING ===================== */
+#loader{position:fixed;inset:0;background:var(--black);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .5s}
+#loader.out{opacity:0;pointer-events:none}
+.loader-logo{width:70px;height:70px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(255,101,0,.6);animation:pulse-logo 1s ease-in-out infinite}
+.loader-logo svg{width:38px;height:38px}
+.loader-bar-wrap{width:200px;height:3px;background:var(--black3);border-radius:2px;overflow:hidden}
+.loader-bar{height:100%;background:var(--orange);width:0;animation:load-bar 1.4s ease forwards}
+@keyframes load-bar{to{width:100%}}
+.loader-text{font-family:var(--dc);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gray2)}
+ 
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:1024px){
+  .sobre-grid,.loc-grid{grid-template-columns:1fr;gap:40px}
+  .float-corner{display:none}
+  .news-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+.gallery-grid{grid-template-columns:repeat(3,1fr)}
+  .feed-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  #menu-btn{display:block}
+  .hero-title{font-size:clamp(2.8rem,12vw,5rem)}
+  .hero-btns{flex-direction:column}
+  .hero-stats{gap:20px}
+  .sobre-visual .float-badge{bottom:-10px;right:-10px}
+  .mvv{grid-template-columns:1fr 1fr}
+  .coaches,.cats-grid,.trofeus,.dep-grid,.redes-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .agenda-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .form-group.full{grid-column:1}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-item.wide,.gallery-item.tall{grid-column:auto;grid-row:auto}
+  .feed-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-brand p{max-width:100%}
+  .jogador-mes{flex-direction:column;gap:24px}
+  .jogador-mes .jm-icon{width:80px;height:80px;font-size:2rem}
+  .section{padding-block:70px}
+}
+@media(max-width:480px){
+  .hero-stats{gap:14px}
+  .hs-num{font-size:1.8rem}
+  .strip-inner{flex-direction:column;gap:4px}
+  .strip-item{border-right:none;border-bottom:1px solid rgba(0,0,0,.15);width:100%;justify-content:center}
+  .strip-item:last-child{border-bottom:none}
+  .mvv{grid-template-columns:1fr}
+  .feed-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+ 
+<!-- ===== LOADER ===== -->
+<div id="loader">
+  <div class="loader-logo">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="18" stroke="#000" stroke-width="2"/>
+      <path d="M20 6 L23 14 L32 14 L25 19 L28 28 L20 23 L12 28 L15 19 L8 14 L17 14 Z" fill="#000"/>
+    </svg>
+  </div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-text">Carregando Terraço FC...</div>
+</div>
+ 
+<!-- ===== WHATSAPP FLOAT ===== -->
+<div id="wpp-float">
+  <div class="wpp-tooltip">Fale conosco no WhatsApp</div>
+  <div style="position:relative">
+    <div class="wpp-pulse"></div>
+    <a href="https://wa.me/5514999999999?text=Olá!%20Tenho%20interesse%20na%20escolinha%20Terraço%20FC!" target="_blank" class="wpp-btn">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</div>
+ 
+<!-- ===== TOAST ===== -->
+<div id="toast"><i class="fas fa-check-circle"></i><span id="toast-msg"></span></div>
+ 
+<!-- ===== LIGHTBOX ===== -->
+<div id="lightbox">
+  <button class="lb-close" id="lb-close"><i class="fas fa-times"></i></button>
+  <div class="lb-content">
+    <div class="lb-icon"><i class="fas fa-futbol"></i></div>
+    <div class="lb-title" id="lb-title">Foto</div>
+    <div class="lb-sub" id="lb-sub">Terraço FC – Pompeia, SP</div>
+  </div>
+</div>
+ 
+<!-- ===== MOBILE MENU ===== -->
+<div id="mobile-menu">
+  <button id="close-menu"><i class="fas fa-times"></i></button>
+  <a href="#sobre">Sobre</a>
+  <a href="#comissao">Comissão</a>
+  <a href="#categorias">Categorias</a>
+  <a href="#galeria">Galeria</a>
+  <a href="#conquistas">Conquistas</a>
+  <a href="#noticias">Notícias</a>
+  <a href="#agenda">Agenda</a>
+  <a href="#localizacao">Localização</a>
+  <div class="mob-cta">
+    <a href="#matricula" class="btn btn-primary"><i class="fas fa-futbol"></i> Matricule-se</a>
+    <a href="https://wa.me/5514999999999" target="_blank" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</div>
+ 
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-badge">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="#000" stroke-width="1.5"/>
+          <path d="M20 6 L23 14 L32 14 L25 19 L28 28 L20 23 L12 28 L15 19 L8 14 L17 14 Z" fill="#000"/>
+        </svg>
+      </div>
+<div class="logo-text">
+        <strong>TERRAÇO FC</strong>
+        <span>Pompeia · SP · Est. 2015</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#comissao">Comissão</a></li>
+      <li><a href="#categorias">Categorias</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#conquistas">Conquistas</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#localizacao">Localização</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#matricula" class="btn btn-outline" style="padding:10px 20px;font-size:.85rem">Matricule-se</a>
+      <a href="https://wa.me/5514999999999" target="_blank" class="btn btn-wpp" style="padding:10px 18px;font-size:.85rem"><i class="fab fa-whatsapp"></i> Contato</a>
+    </div>
+    <button id="menu-btn"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+ 
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-ring1"></div>
+  <div class="hero-ring2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">⚽ Escolinha de Futebol · Pompeia, SP</div>
+      <h1 class="hero-title">
+        TERRAÇO<br>
+        <span class="hl">FC</span>
+      </h1>
+      <p class="hero-sub">Formando atletas e cidadãos através do futebol. Uma escola de vida dentro e fora dos gramados desde 2015.</p>
+      <div class="hero-btns">
+        <a href="#matricula" class="btn btn-primary"><i class="fas fa-futbol"></i> Matricule-se Agora</a>
+        <a href="https://wa.me/5514999999999?text=Quero%20agendar%20uma%20aula%20experimental%20no%20Terraço%20FC!" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Aula Experimental</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-num" data-count="350">0</div><div class="hs-label">Alunos Formados</div></div>
+        <div><div class="hs-num" data-count="6">0</div><div class="hs-label">Categorias</div></div>
+        <div><div class="hs-num" data-count="9">0</div><div class="hs-label">Anos de História</div></div>
+        <div><div class="hs-num" data-count="18">0</div><div class="hs-label">Títulos &amp; Troféus</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Role para baixo</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+ 
+<!-- ===== STATS STRIP ===== -->
+<div id="strip">
+  <div class="container">
+    <div class="strip-inner">
+      <div class="strip-item"><i class="fas fa-users"></i><div><div class="sn">120+</div><div class="sl">Alunos Ativos</div></div></div>
+      <div class="strip-item"><i class="fas fa-layer-group"></i><div><div class="sn">6</div><div class="sl">Categorias por Idade</div></div></div>
+      <div class="strip-item"><i class="fas fa-calendar-alt"></i><div><div class="sn">9 Anos</div><div class="sl">de Projeto</div></div></div>
+      <div class="strip-item"><i class="fas fa-trophy"></i><div><div class="sn">18</div><div class="sl">Títulos Conquistados</div></div></div>
+      <div class="strip-item"><i class="fas fa-star"></i><div><div class="sn">100%</div><div class="sl">Comprometimento</div></div></div>
+    </div>
+  </div>
+</div>
+ 
+<!-- ===== SOBRE ===== -->
+<section id="sobre" class="section">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-visual reveal">
+        <div class="sobre-main-img">
+          <div class="sobre-img-placeholder" style="position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px">
+            <i class="fas fa-futbol" style="font-size:5rem;color:var(--orange);opacity:.3"></i>
+            <span style="font-family:var(--dc);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray2);opacity:.5">Foto do Clube</span>
+          </div>
+        </div>
+        <div class="float-badge">
+          <strong>2015</strong>
+          <span>Fundado em<br>Pompeia-SP</span>
+        </div>
+        <div class="float-corner">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+      </div>
+      <div class="sobre-text reveal">
+        <div class="tag">⚽ Nossa História</div>
+        <h2 style="margin-top:12px">SOBRE O <span>TERRAÇO FC</span></h2>
+        <p>O Terraço FC nasceu em 2015 em Pompeia-SP com um sonho simples: oferecer uma escolinha de futebol de qualidade para as crianças da região. O que começou com 20 alunos num campo de terra hoje é referência regional, com mais de 120 atletas ativos e conquistas expressivas.</p>
+        <p>Nossa metodologia combina o desenvolvimento técnico-tático do futebol com valores que moldam o caráter: disciplina, respeito, trabalho em equipe e responsabilidade. Aqui, formamos atletas — mas antes de tudo, formamos pessoas.</p>
+        <div class="mvv">
+          <div class="mvv-card">
+            <h4>🎯 Missão</h4>
+            <p>Desenvolver atletas e cidadãos através do futebol, com excelência técnica e formação humana.</p>
+          </div>
+          <div class="mvv-card">
+            <h4>👁️ Visão</h4>
+            <p>Ser a escolinha de futebol mais respeitada do interior paulista até 2028.</p>
+          </div>
+<div class="mvv-card">
+            <h4>💎 Valores</h4>
+            <p>Disciplina, respeito, amizade, saúde e dedicação em cada treino.</p>
+          </div>
+        </div>
+        <div class="valores">
+          <div class="val-chip"><i class="fas fa-check-circle"></i> Disciplina</div>
+          <div class="val-chip"><i class="fas fa-heart"></i> Amizade</div>
+          <div class="val-chip"><i class="fas fa-dumbbell"></i> Saúde</div>
+          <div class="val-chip"><i class="fas fa-hands"></i> Respeito</div>
+          <div class="val-chip"><i class="fas fa-star"></i> Excelência</div>
+          <div class="val-chip"><i class="fas fa-users"></i> Família</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== TIMELINE ===== -->
+<section id="timeline" class="section-sm" style="background:var(--black)">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">📅 Nossa Trajetória</div>
+      <h2>LINHA DO <span>TEMPO</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="tl-track">
+      <div class="tl-item">
+        <div class="tl-dot"><i class="fas fa-flag" style="color:#000;font-size:.7rem"></i></div>
+        <div class="tl-content">
+          <div class="tl-year">2015</div>
+          <div class="tl-title">Fundação do Terraço FC</div>
+          <div class="tl-desc">Início das atividades com 20 alunos e dois treinadores voluntários num campo emprestado no bairro Terraço.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><i class="fas fa-trophy" style="color:#000;font-size:.7rem"></i></div>
+        <div class="tl-content">
+          <div class="tl-year">2017</div>
+          <div class="tl-title">Primeiro Título Regional</div>
+          <div class="tl-desc">Conquista do campeonato municipal Sub-11 — o primeiro de muitos. A semente da vitória foi plantada.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><i class="fas fa-building" style="color:#000;font-size:.7rem"></i></div>
+        <div class="tl-content">
+          <div class="tl-year">2019</div>
+          <div class="tl-title">Sede Própria e Parceria</div>
+          <div class="tl-desc">Formalização da escolinha com CNPJ, aluguel da sede oficial e parceria com a Prefeitura de Pompeia.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><i class="fas fa-users" style="color:#000;font-size:.7rem"></i></div>
+        <div class="tl-content">
+          <div class="tl-year">2021</div>
+          <div class="tl-title">100 Alunos Formados</div>
+          <div class="tl-desc">Marco histórico: 100 crianças e adolescentes formadas pela escolinha, muitas encaminhadas a clubes da região.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><i class="fas fa-star" style="color:#000;font-size:.7rem"></i></div>
+        <div class="tl-content">
+          <div class="tl-year">2024</div>
+          <div class="tl-title">Expansão e Reconhecimento</div>
+          <div class="tl-desc">Abertura de 2 novas turmas, contratação de staff profissional e reconhecimento como Escolinha Referência pela FPF.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== COMISSÃO ===== -->
+<section id="comissao" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">👨‍🏫 Nossa Equipe</div>
+      <h2>COMISSÃO <span>TÉCNICA</span></h2>
+      <p>Profissionais certificados e apaixonados pelo futebol e pela formação humana.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="coaches">
+      <div class="coach-card">
+        <div class="coach-photo">
+          <div class="coach-icon"><i class="fas fa-user-tie"></i></div>
+          <div class="coach-cat" style="position:absolute;top:14px;left:14px;z-index:2"><span class="tag">Coordenador Técnico</span></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-name">Carlos Eduardo Silva</div>
+          <div class="coach-role">Coordenador Técnico Geral</div>
+          <div class="coach-quote">"O futebol me ensinou que o verdadeiro time começa dentro do coração de cada jogador."</div>
+          <div class="coach-badges">
+            <span class="coach-badge">🏅 UEFA C</span>
+            <span class="coach-badge">CBF Nível B</span>
+            <span class="coach-badge">15 anos exp.</span>
+          </div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo">
+<div class="coach-icon"><i class="fas fa-user"></i></div>
+          <div class="coach-cat" style="position:absolute;top:14px;left:14px;z-index:2"><span class="tag">Sub-7 e Sub-9</span></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-name">Rodrigo Martins</div>
+          <div class="coach-role">Treinador Sub-7 e Sub-9</div>
+          <div class="coach-quote">"Com os pequenos aprendo todo dia que alegria e aprendizado andam juntos."</div>
+          <div class="coach-badges">
+            <span class="coach-badge">CBF Nível A</span>
+            <span class="coach-badge">Pedagogy Sport</span>
+            <span class="coach-badge">8 anos exp.</span>
+          </div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo">
+          <div class="coach-icon"><i class="fas fa-user"></i></div>
+          <div class="coach-cat" style="position:absolute;top:14px;left:14px;z-index:2"><span class="tag">Sub-11 e Sub-13</span></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-name">Fábio Almeida</div>
+          <div class="coach-role">Treinador Sub-11 e Sub-13</div>
+          <div class="coach-quote">"Nessa fase, o tático começa a ganhar espaço. Mas sempre com diversão e leveza."</div>
+          <div class="coach-badges">
+            <span class="coach-badge">CBF Nível B</span>
+            <span class="coach-badge">Ex-atleta</span>
+            <span class="coach-badge">10 anos exp.</span>
+          </div>
+        </div>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo">
+          <div class="coach-icon"><i class="fas fa-user"></i></div>
+          <div class="coach-cat" style="position:absolute;top:14px;left:14px;z-index:2"><span class="tag">Sub-15 e Sub-17</span></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-name">Anderson Pereira</div>
+          <div class="coach-role">Treinador Sub-15 e Sub-17</div>
+          <div class="coach-quote">"Aqui preparamos não só jogadores, mas jovens prontos para os desafios da vida."</div>
+          <div class="coach-badges">
+            <span class="coach-badge">UEFA B</span>
+            <span class="coach-badge">FPF Licença</span>
+            <span class="coach-badge">12 anos exp.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== CATEGORIAS ===== -->
+<section id="categorias" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">👦 Turmas e Categorias</div>
+      <h2>NOSSAS <span>CATEGORIAS</span></h2>
+      <p>Organizado por faixas etárias, cada turma tem metodologia específica para cada fase do desenvolvimento.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="cats-grid">
+      <div class="cat-card">
+        <div class="cat-num">07</div>
+        <div class="cat-label">SUB-7</div>
+        <div class="cat-age">5 – 7 anos</div>
+        <div class="cat-info">
+          <div class="cat-row"><i class="fas fa-clock"></i><span>Terça e Quinta, 14h–15h30</span></div>
+          <div class="cat-row"><i class="fas fa-map-marker-alt"></i><span>Campo do Terraço, Pompeia</span></div>
+          <div class="cat-row"><i class="fas fa-calendar"></i><span>2× por semana · 8 aulas/mês</span></div>
+        </div>
+        <div class="cat-obj">
+          <h5>Objetivos</h5>
+          <div class="cat-obj-tags">
+            <span>Coordenação</span><span>Ludicidade</span><span>Socialização</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">09</div>
+        <div class="cat-label">SUB-9</div>
+        <div class="cat-age">8 – 9 anos</div>
+        <div class="cat-info">
+          <div class="cat-row"><i class="fas fa-clock"></i><span>Segunda e Quarta, 15h–16h30</span></div>
+          <div class="cat-row"><i class="fas fa-map-marker-alt"></i><span>Campo do Terraço, Pompeia</span></div>
+          <div class="cat-row"><i class="fas fa-calendar"></i><span>2× por semana · 8 aulas/mês</span></div>
+        </div>
+        <div class="cat-obj">
+          <h5>Objetivos</h5>
+          <div class="cat-obj-tags">
+            <span>Domínio de bola</span><span>Passes</span><span>Mini-jogos</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">11</div>
+        <div class="cat-label">SUB-11</div>
+        <div class="cat-age">10 – 11 anos</div>
+        <div class="cat-info">
+          <div class="cat-row"><i class="fas fa-clock"></i><span>Terça e Quinta, 15h30–17h</span></div>
+          <div class="cat-row"><i class="fas fa-map-marker-alt"></i><span>Campo do Terraço, Pompeia</span></div>
+          <div class="cat-row"><i class="fas fa-calendar"></i><span>2× por semana · 8 aulas/mês</span></div>
+</div>
+        <div class="cat-obj">
+          <h5>Objetivos</h5>
+          <div class="cat-obj-tags">
+            <span>Tática básica</span><span>Posições</span><span>Competições</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">13</div>
+        <div class="cat-label">SUB-13</div>
+        <div class="cat-age">12 – 13 anos</div>
+        <div class="cat-info">
+          <div class="cat-row"><i class="fas fa-clock"></i><span>Segunda e Quarta, 17h–18h30</span></div>
+          <div class="cat-row"><i class="fas fa-map-marker-alt"></i><span>Campo do Terraço, Pompeia</span></div>
+          <div class="cat-row"><i class="fas fa-calendar"></i><span>2× por semana · 8 aulas/mês</span></div>
+        </div>
+        <div class="cat-obj">
+          <h5>Objetivos</h5>
+          <div class="cat-obj-tags">
+            <span>Esquemas táticos</span><span>Força</span><span>Campeonatos</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">15</div>
+        <div class="cat-label">SUB-15</div>
+        <div class="cat-age">14 – 15 anos</div>
+        <div class="cat-info">
+          <div class="cat-row"><i class="fas fa-clock"></i><span>Terça, Quinta e Sábado</span></div>
+          <div class="cat-row"><i class="fas fa-map-marker-alt"></i><span>Campo do Terraço, Pompeia</span></div>
+          <div class="cat-row"><i class="fas fa-calendar"></i><span>3× por semana · 12 aulas/mês</span></div>
+        </div>
+        <div class="cat-obj">
+          <h5>Objetivos</h5>
+          <div class="cat-obj-tags">
+            <span>Alto rendimento</span><span>Revelação</span><span>Peneiras</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-num">17</div>
+        <div class="cat-label">SUB-17</div>
+        <div class="cat-age">16 – 17 anos</div>
+        <div class="cat-info">
+          <div class="cat-row"><i class="fas fa-clock"></i><span>Segunda, Quarta e Sexta</span></div>
+          <div class="cat-row"><i class="fas fa-map-marker-alt"></i><span>Campo do Terraço, Pompeia</span></div>
+          <div class="cat-row"><i class="fas fa-calendar"></i><span>3× por semana · 12 aulas/mês</span></div>
+        </div>
+        <div class="cat-obj">
+          <h5>Objetivos</h5>
+          <div class="cat-obj-tags">
+            <span>Profissionalização</span><span>Física</span><span>Mental</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== GALERIA ===== -->
+<section id="galeria" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">📸 Galeria</div>
+      <h2>FOTOS E <span>VÍDEOS</span></h2>
+      <p>Momentos que contam a nossa história dentro e fora do campo.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="gallery-filters">
+      <button class="gf-btn active" data-filter="all">Todos</button>
+      <button class="gf-btn" data-filter="treinos">Treinos</button>
+      <button class="gf-btn" data-filter="jogos">Jogos</button>
+      <button class="gf-btn" data-filter="eventos">Eventos</button>
+      <button class="gf-btn" data-filter="camp">Campeonatos</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item wide tall" data-category="jogos" onclick="openLightbox('Jogo do Campeonato Regional 2024','Categoria Sub-15 conquistando mais um título para o Terraço FC!')">
+        <div class="g-inner"><i class="fas fa-futbol"></i><span>Jogo · Sub-15 · 2024</span></div>
+        <div class="g-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item" data-category="treinos" onclick="openLightbox('Treino Técnico','Aperfeiçoamento de habilidades individuais na categoria Sub-11')">
+        <div class="g-inner"><i class="fas fa-running"></i><span>Treino · Sub-11</span></div>
+        <div class="g-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item" data-category="eventos" onclick="openLightbox('Confraternização de Fim de Ano 2023','Uma noite especial para celebrar a temporada com toda a família Terraço FC')">
+        <div class="g-inner"><i class="fas fa-glass-cheers"></i><span>Evento · Dez/2023</span></div>
+        <div class="g-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item" data-category="camp" onclick="openLightbox('Campeões Regionais 2023','Título do campeonato regional Sub-13 — mais um capítulo da história!')">
+        <div class="g-inner"><i class="fas fa-trophy"></i><span>Campeonato · Sub-13</span></div>
+        <div class="g-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item" data-category="treinos" onclick="openLightbox('Treino de Finalização','Trabalho de finalização com os meninos do Sub-9')">
+        <div class="g-inner"><i class="fas fa-bullseye"></i><span>Treino · Sub-9</span></div>
+        <div class="g-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item wide" data-category="jogos" onclick="openLightbox('Grande Final 2022','Disputa emocionante na final do campeonato municipal — vitória nos pênaltis!')">
+        <div class="g-inner"><i class="fas fa-medal"></i><span>Final · Municipal 2022</span></div>
+        <div class="g-overlay"><i class="fas fa-expand"></i></div>
+ </div>
+    </div>
+    <div class="carousel-wrap">
+      <h3>🎬 REELS E <span>DESTAQUES</span></h3>
+      <div class="carousel">
+        <div class="carousel-item"><i class="fab fa-instagram"></i><span>Reel · Treino</span></div>
+        <div class="carousel-item"><i class="fab fa-youtube"></i><span>Highlights · Jogo</span></div>
+        <div class="carousel-item"><i class="fab fa-tiktok"></i><span>TikTok · Sub-7</span></div>
+        <div class="carousel-item"><i class="fab fa-instagram"></i><span>Reel · Final 2023</span></div>
+        <div class="carousel-item"><i class="fab fa-youtube"></i><span>Vídeo Institucional</span></div>
+        <div class="carousel-item"><i class="fab fa-instagram"></i><span>Reel · Conquista</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== CONQUISTAS ===== -->
+<section id="conquistas" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">🏆 Palmarés</div>
+      <h2>NOSSAS <span>CONQUISTAS</span></h2>
+      <p>Uma história escrita com suor, dedicação e muita bola dentro do gol.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="trofeus">
+      <div class="trofeu-card">
+        <div class="trofeu-icon"><i class="fas fa-trophy"></i></div>
+        <div class="trofeu-year">2024</div>
+        <div class="trofeu-name">Camp. Regional Sub-15</div>
+        <div class="trofeu-desc">1º lugar no campeonato regional da região de Marília</div>
+      </div>
+      <div class="trofeu-card">
+        <div class="trofeu-icon"><i class="fas fa-medal"></i></div>
+        <div class="trofeu-year">2023</div>
+        <div class="trofeu-name">Camp. Municipal Sub-13</div>
+        <div class="trofeu-desc">Tricampeonato municipal na categoria Sub-13</div>
+      </div>
+      <div class="trofeu-card">
+        <div class="trofeu-icon"><i class="fas fa-star"></i></div>
+        <div class="trofeu-year">2022</div>
+        <div class="trofeu-name">Torneio Início Sub-11</div>
+        <div class="trofeu-desc">Campeão do torneio de início de temporada da Associação Regional</div>
+      </div>
+      <div class="trofeu-card">
+        <div class="trofeu-icon"><i class="fas fa-award"></i></div>
+        <div class="trofeu-year">2021</div>
+        <div class="trofeu-name">Melhor Escolinha da Região</div>
+        <div class="trofeu-desc">Reconhecimento da Federação Paulista de Futebol</div>
+      </div>
+      <div class="trofeu-card">
+        <div class="trofeu-icon"><i class="fas fa-crown"></i></div>
+        <div class="trofeu-year">2019</div>
+        <div class="trofeu-name">Camp. Estadual Sub-9</div>
+        <div class="trofeu-desc">Vice-campeão estadual na categoria Sub-9 — enorme conquista!</div>
+      </div>
+    </div>
+    <!-- Jogador do Mês -->
+    <div class="jogador-mes reveal">
+      <div class="jm-icon">⚽</div>
+      <div class="jm-content">
+        <h3>JOGADOR DO <span>MÊS</span></h3>
+        <div class="jm-player">Lucas Fernandes</div>
+        <p>15 anos · Categoria Sub-15 · Meia-atacante. Lucas se destacou em maio com performances decisivas, incluindo 3 gols e 4 assistências nas rodadas do campeonato regional.</p>
+        <div class="jm-stats">
+          <div class="jm-stat"><div class="jn">3</div><div class="jl">Gols</div></div>
+          <div class="jm-stat"><div class="jn">4</div><div class="jl">Assistências</div></div>
+          <div class="jm-stat"><div class="jn">5</div><div class="jl">Jogos</div></div>
+          <div class="jm-stat"><div class="jn">9.2</div><div class="jl">Nota Média</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== NOTÍCIAS ===== -->
+<section id="noticias" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">📰 Blog e Notícias</div>
+      <h2>NOVIDADES DO <span>CLUBE</span></h2>
+      <p>Fique por dentro de tudo que acontece no Terraço FC.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="news-grid">
+      <div class="news-main reveal">
+        <div class="news-img"><i class="fas fa-newspaper"></i></div>
+        <div class="news-body">
+          <div class="news-cat"><span class="tag">🏆 Campeonato</span></div>
+          <h3>Terraço FC é campeão regional Sub-15 após virada histórica!</h3>
+          <p>Em jogo emocionante disputado no último sábado, nosso Sub-15 virou o placar no segundo tempo e sagrou-se campeão regional pela primeira vez na história da categoria. O goleiro Pedro Henrique foi eleito o melhor da partida.</p>
+          <div class="news-meta">
+            <span><i class="fas fa-calendar"></i> 08 Maio, 2025</span>
+            <span><i class="fas fa-clock"></i> 3 min leitura</span>
+          </div>
+        </div>
+      </div>
+      <div class="news-side">
+        <div class="news-sm reveal">
+          <div class="news-sm-img"><i class="fas fa-clipboard-list"></i></div>
+<div class="news-sm-body">
+            <h4>Peneira Sub-13 e Sub-15 abertas para inscrições</h4>
+            <span><i class="fas fa-calendar"></i> 05 Maio, 2025</span>
+          </div>
+        </div>
+        <div class="news-sm reveal">
+          <div class="news-sm-img"><i class="fas fa-apple-alt"></i></div>
+          <div class="news-sm-body">
+            <h4>Dicas de alimentação para atletas mirins do nutricionista do clube</h4>
+            <span><i class="fas fa-calendar"></i> 01 Maio, 2025</span>
+          </div>
+        </div>
+        <div class="news-sm reveal">
+          <div class="news-sm-img"><i class="fas fa-user-graduate"></i></div>
+          <div class="news-sm-body">
+            <h4>Ex-aluno do Terraço FC assina contrato com clube profissional</h4>
+            <span><i class="fas fa-calendar"></i> 25 Abr, 2025</span>
+          </div>
+        </div>
+        <div class="news-sm reveal">
+          <div class="news-sm-img"><i class="fas fa-calendar-check"></i></div>
+          <div class="news-sm-body">
+            <h4>Festival de futebol 7 confirmado para junho — inscreva seu time!</h4>
+            <span><i class="fas fa-calendar"></i> 20 Abr, 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== AGENDA ===== -->
+<section id="agenda" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">📅 Calendário</div>
+      <h2>AGENDA DE <span>JOGOS E EVENTOS</span></h2>
+      <p>Confira os próximos compromissos do Terraço FC.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="agenda-grid">
+      <div class="agenda-card">
+        <div class="ag-date"><div class="ag-day">18</div><div class="ag-month">Mai</div></div>
+        <div class="ag-content">
+          <h4>Campeonato Regional Sub-13 – Rodada 4</h4>
+          <p>Terraço FC x Marília EC · Campo do Terraço</p>
+          <div class="ag-meta"><span><i class="fas fa-clock"></i> 09h00</span><span><i class="fas fa-map-marker-alt"></i> Campo Principal</span></div>
+        </div>
+        <span class="ag-badge jogo">Jogo</span>
+      </div>
+      <div class="agenda-card">
+        <div class="ag-date"><div class="ag-day">22</div><div class="ag-month">Mai</div></div>
+        <div class="ag-content">
+          <h4>Peneira Sub-15 – Temporada 2025/2026</h4>
+          <p>Seleção de novos atletas para a categoria Sub-15</p>
+          <div class="ag-meta"><span><i class="fas fa-clock"></i> 14h00</span><span><i class="fas fa-map-marker-alt"></i> Campo do Terraço</span></div>
+        </div>
+        <span class="ag-badge pene">Peneira</span>
+      </div>
+      <div class="agenda-card">
+        <div class="ag-date"><div class="ag-day">25</div><div class="ag-month">Mai</div></div>
+        <div class="ag-content">
+          <h4>Copa Interior – Sub-11 e Sub-13</h4>
+          <p>Competição estadual em Marília · Jogos às 08h e 11h</p>
+          <div class="ag-meta"><span><i class="fas fa-clock"></i> 08h00</span><span><i class="fas fa-map-marker-alt"></i> Marília, SP</span></div>
+        </div>
+        <span class="ag-badge camp">Campeonato</span>
+      </div>
+      <div class="agenda-card">
+        <div class="ag-date"><div class="ag-day">07</div><div class="ag-month">Jun</div></div>
+        <div class="ag-content">
+          <h4>Festival Dia do Estudante – Todas as Categorias</h4>
+          <p>Jogos festivos, premiações e churrasco em família!</p>
+          <div class="ag-meta"><span><i class="fas fa-clock"></i> 08h às 18h</span><span><i class="fas fa-map-marker-alt"></i> Campo do Terraço</span></div>
+        </div>
+        <span class="ag-badge fest">Festival</span>
+      </div>
+      <div class="agenda-card">
+        <div class="ag-date"><div class="ag-day">14</div><div class="ag-month">Jun</div></div>
+        <div class="ag-content">
+          <h4>Jogo Treino Sub-17 vs. Adamantina FC</h4>
+          <p>Preparação para o estadual · Entrada franca</p>
+          <div class="ag-meta"><span><i class="fas fa-clock"></i> 15h30</span><span><i class="fas fa-map-marker-alt"></i> Campo do Terraço</span></div>
+        </div>
+        <span class="ag-badge jogo">Jogo</span>
+      </div>
+      <div class="agenda-card">
+        <div class="ag-date"><div class="ag-day">28</div><div class="ag-month">Jun</div></div>
+        <div class="ag-content">
+          <h4>Reunião de Responsáveis – 1º Semestre 2025</h4>
+          <p>Apresentação de resultados, avaliações e novidades 2025</p>
+          <div class="ag-meta"><span><i class="fas fa-clock"></i> 19h30</span><span><i class="fas fa-map-marker-alt"></i> Sede do Clube</span></div>
+        </div>
+        <span class="ag-badge fest">Reunião</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== MATRÍCULA ===== -->
+<section id="matricula" class="section" style="background:var(--black2)">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">📝 Matrícula Online</div>
+      <h2>INSCREVA SEU <span>FILHO AGORA</span></h2>
+      <p>Preencha o formulário e entraremos em contato em até 24 horas.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="form-wrap reveal">
+      <form id="matricula-form" onsubmit="handleForm(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nome do Aluno *</label>
+            <input type="text" placeholder="Nome completo" required/>
+          </div>
+          <div class="form-group">
+            <label>Idade *</label>
+            <input type="number" placeholder="Ex: 10" min="5" max="17" required/>
+          </div>
+          <div class="form-group">
+            <label>Nome do Responsável *</label>
+            <input type="text" placeholder="Nome completo do pai/mãe" required/>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp *</label>
+            <input type="tel" placeholder="(14) 9 9999-9999" required/>
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com"/>
+          </div>
+          <div class="form-group">
+            <label>Categoria de Interesse *</label>
+            <select required>
+              <option value="" disabled selected>Selecione a categoria</option>
+              <option>Sub-7 (5–7 anos)</option>
+              <option>Sub-9 (8–9 anos)</option>
+              <option>Sub-11 (10–11 anos)</option>
+              <option>Sub-13 (12–13 anos)</option>
+              <option>Sub-15 (14–15 anos)</option>
+              <option>Sub-17 (16–17 anos)</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Observações ou Dúvidas</label>
+            <textarea placeholder="Alguma informação importante ou dúvida que você tenha..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-futbol"></i> Enviar Matrícula</button>
+            <a href="https://wa.me/5514999999999?text=Olá!%20Quero%20fazer%20a%20matrícula%20no%20Terraço%20FC!" target="_blank" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Continuar no WhatsApp</a>
+          </div>
+          <div class="form-note full">
+            <i class="fas fa-shield-alt"></i>
+            Seus dados estão seguros. Retornaremos em até 24h para confirmar a matrícula.
+          </div>
+        </div>
+      </form>
+      <div class="form-success" id="form-success">
+        <i class="fas fa-check-circle"></i>
+        <h3>Inscrição Enviada! 🎉</h3>
+        <p>Recebemos sua inscrição. Nossa equipe entrará em contato em breve via WhatsApp para confirmar os detalhes da matrícula no <strong>Terraço FC</strong>.</p>
+        <div style="margin-top:20px">
+          <a href="https://wa.me/5514999999999" target="_blank" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Falar Direto no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== DEPOIMENTOS ===== -->
+<section id="depoimentos" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">💬 Depoimentos</div>
+      <h2>O QUE AS <span>FAMÍLIAS DIZEM</span></h2>
+      <p>A confiança de quem já faz parte da família Terraço FC.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="dep-grid">
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <div class="dep-text">"Meu filho chegou tímido e hoje é um líder dentro e fora do campo. Os treinadores são excelentes e o ambiente é incrível. Recomendo de olhos fechados!"</div>
+        <div class="dep-author">
+          <div class="dep-avatar">MF</div>
+          <div class="dep-info">
+            <strong>Marcos Ferreira</strong>
+            <span>Pai do Pedro, Sub-11</span>
+          </div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <div class="dep-text">"A dedicação dos treinadores é fora do comum. Minha filha melhorou absurdamente em 6 meses — tanto no futebol quanto na disciplina escolar. Valeu cada centavo!"</div>
+        <div class="dep-author">
+          <div class="dep-avatar">AC</div>
+          <div class="dep-info">
+            <strong>Ana Carolina</strong>
+            <span>Mãe da Isabela, Sub-9</span>
+          </div>
+        </div>
+</div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <div class="dep-text">"Três filhos no Terraço FC e só tenho a agradecer. É mais que uma escolinha — é família. A organização, o carinho e a metodologia são exemplares."</div>
+        <div class="dep-author">
+          <div class="dep-avatar">RS</div>
+          <div class="dep-info">
+            <strong>Roberto Santos</strong>
+            <span>Pai de 3 alunos</span>
+          </div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <div class="dep-text">"Estava procurando uma escolinha séria perto de Pompeia e encontrei o Terraço FC. Em 3 meses meu filho já estava participando dos jogos e adorando cada treino!"</div>
+        <div class="dep-author">
+          <div class="dep-avatar">JP</div>
+          <div class="dep-info">
+            <strong>João Paulo Melo</strong>
+            <span>Pai do Guilherme, Sub-7</span>
+          </div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <div class="dep-text">"O treinador Rodrigo tem um dom especial com crianças. Meu filho de 6 anos mal tirava o tênis de chuteira depois dos treinos. Isso diz tudo sobre o Terraço FC!"</div>
+        <div class="dep-author">
+          <div class="dep-avatar">LL</div>
+          <div class="dep-info">
+            <strong>Luciana Lima</strong>
+            <span>Mãe do Davi, Sub-7</span>
+          </div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <div class="dep-text">"Meu sobrinho foi revelado aqui e hoje treina em um clube profissional. O Terraço FC realmente muda vidas. Uma iniciativa que Pompeia tem muito orgulho!"</div>
+        <div class="dep-author">
+          <div class="dep-avatar">CM</div>
+          <div class="dep-info">
+            <strong>Claudia Moreira</strong>
+            <span>Tia do atleta Diego, ex-aluno</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== LOCALIZAÇÃO ===== -->
+<section id="localizacao" class="section" style="background:var(--black2)">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">📍 Onde Estamos</div>
+      <h2>NOSSA <span>LOCALIZAÇÃO</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="loc-grid">
+      <div class="map-box">
+        <iframe
+          src="https://maps.google.com/maps?q=Pompeia,SP,Brasil&output=embed&z=14"
+          title="Localização Terraço FC"
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="loc-info reveal">
+        <h3>TERRAÇO FC – <span>POMPEIA</span></h3>
+        <div class="loc-items">
+          <div class="loc-item">
+            <div class="loc-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h5>Endereço</h5>
+              <p>Rua do Terraço, 450 – Bairro Terraço<br>Pompeia – SP, CEP 17580-000</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-item-icon"><i class="fas fa-landmark"></i></div>
+            <div>
+              <h5>Referência</h5>
+              <p>Próximo ao Parque Municipal de Pompeia, em frente à Escola Estadual João XXIII</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-item-icon"><i class="fas fa-parking"></i></div>
+            <div>
+              <h5>Estacionamento</h5>
+              <p>Estacionamento gratuito no local com capacidade para 40 veículos</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-item-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <h5>Horário de Atendimento</h5>
+              <p>Segunda a Sexta: 14h–19h<br>Sábados: 08h–14h</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-item-icon"><i class="fas fa-futbol"></i></div>
+            <div>
+              <h5>Estrutura</h5>
+<p>Campo gramado oficial, vestiários, arquibancada coberta e área de convivência para famílias</p>
+            </div>
+          </div>
+        </div>
+        <div class="loc-ctas">
+          <a href="https://maps.google.com/?q=Pompeia,SP" target="_blank" class="btn btn-outline"><i class="fas fa-directions"></i> Como Chegar</a>
+          <a href="https://wa.me/5514999999999" target="_blank" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Falar Conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== REDES SOCIAIS ===== -->
+<section id="redes" class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div class="tag">📱 Redes Sociais</div>
+      <h2>SIGA O <span>TERRAÇO FC</span></h2>
+      <p>Acompanhe nossa rotina, bastidores e novidades nas redes sociais.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="redes-grid">
+      <a href="#" target="_blank" class="rede-card" style="--c:#E1306C">
+        <div class="rede-icon"><i class="fab fa-instagram"></i></div>
+        <h4>Instagram</h4>
+        <span>@terracofcpompeia</span>
+        <span style="font-size:.75rem;color:var(--gray2);font-family:var(--dc);letter-spacing:.04em">4.2k seguidores</span>
+      </a>
+      <a href="#" target="_blank" class="rede-card" style="--c:#FF0050">
+        <div class="rede-icon"><i class="fab fa-tiktok"></i></div>
+        <h4>TikTok</h4>
+        <span>@terracofcpompeia</span>
+        <span style="font-size:.75rem;color:var(--gray2);font-family:var(--dc);letter-spacing:.04em">2.8k seguidores</span>
+      </a>
+      <a href="#" target="_blank" class="rede-card" style="--c:#FF0000">
+        <div class="rede-icon"><i class="fab fa-youtube"></i></div>
+        <h4>YouTube</h4>
+        <span>Terraço FC Oficial</span>
+        <span style="font-size:.75rem;color:var(--gray2);font-family:var(--dc);letter-spacing:.04em">1.1k inscritos</span>
+      </a>
+      <a href="#" target="_blank" class="rede-card" style="--c:#1877F2">
+        <div class="rede-icon"><i class="fab fa-facebook"></i></div>
+        <h4>Facebook</h4>
+        <span>Terraço FC Pompeia</span>
+        <span style="font-size:.75rem;color:var(--gray2);font-family:var(--dc);letter-spacing:.04em">3.5k curtidas</span>
+      </a>
+      <a href="https://wa.me/5514999999999" target="_blank" class="rede-card" style="--c:#25D366">
+        <div class="rede-icon"><i class="fab fa-whatsapp"></i></div>
+        <h4>WhatsApp</h4>
+        <span>Contato direto</span>
+        <span style="font-size:.75rem;color:var(--gray2);font-family:var(--dc);letter-spacing:.04em">(14) 9 9999-9999</span>
+      </a>
+    </div>
+    <div class="feed-strip">
+      <h3>FEED DO <span>INSTAGRAM</span></h3>
+      <div class="feed-grid">
+        <div class="feed-item" onclick="showToast('Abrindo Instagram...')"><i class="fab fa-instagram"></i></div>
+        <div class="feed-item" onclick="showToast('Abrindo Instagram...')"><i class="fas fa-futbol"></i></div>
+        <div class="feed-item" onclick="showToast('Abrindo Instagram...')"><i class="fas fa-trophy"></i></div>
+        <div class="feed-item" onclick="showToast('Abrindo Instagram...')"><i class="fas fa-running"></i></div>
+        <div class="feed-item" onclick="showToast('Abrindo Instagram...')"><i class="fas fa-users"></i></div>
+        <div class="feed-item" onclick="showToast('Abrindo Instagram...')"><i class="fas fa-star"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-badge" style="width:52px;height:52px">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:30px;height:30px">
+            <circle cx="20" cy="20" r="18" stroke="#000" stroke-width="1.5"/>
+            <path d="M20 6 L23 14 L32 14 L25 19 L28 28 L20 23 L12 28 L15 19 L8 14 L17 14 Z" fill="#000"/>
+          </svg>
+        </div>
+        <div style="margin-top:12px">
+          <div style="font-family:var(--df);font-size:1.3rem;letter-spacing:.06em">TERRAÇO FC</div>
+          <div style="font-family:var(--dc);font-size:.65rem;font-weight:700;color:var(--orange);letter-spacing:.14em;text-transform:uppercase">Pompeia · SP · Est. 2015</div>
+        </div>
+        <p>Formando atletas e cidadãos através do futebol. Uma escola de vida dentro e fora dos gramados há 9 anos em Pompeia, SP.</p>
+        <div class="soc">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <a href="#sobre">Sobre o Clube</a>
+        <a href="#comissao">Comissão Técnica</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#conquistas">Conquistas</a>
+        <a href="#noticias">Blog e Notícias</a>
+</div>
+      <div class="footer-col">
+        <h5>Informações</h5>
+        <a href="#agenda">Agenda de Jogos</a>
+        <a href="#matricula">Fazer Matrícula</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#localizacao">Localização</a>
+        <a href="#redes">Redes Sociais</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <a href="https://wa.me/5514999999999"><i class="fab fa-whatsapp"></i> (14) 9 9999-9999</a>
+        <a href="mailto:contato@terracofcpompeia.com.br"><i class="fas fa-envelope"></i> contato@terracofcpompeia.com.br</a>
+        <a href="#localizacao"><i class="fas fa-map-marker-alt"></i> Rua do Terraço, 450 – Pompeia, SP</a>
+        <a href="#"><i class="fas fa-clock"></i> Seg-Sex: 14h–19h · Sáb: 08h–14h</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Terraço FC – Todos os direitos reservados.</span>
+      <span>Feito com <i class="fas fa-heart"></i> em Pompeia, SP</span>
+    </div>
+  </div>
+</footer>
+ 
+<script>
+/* ===== LOADER ===== */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('out');
+  }, 1600);
+});
+ 
+/* ===== NAVBAR ===== */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+ 
+/* ===== MOBILE MENU ===== */
+document.getElementById('menu-btn').addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+document.getElementById('close-menu').addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.querySelectorAll('#mobile-menu a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+ 
+/* ===== COUNT UP ANIMATION ===== */
+function animateCount(el, target) {
+  let start = 0;
+  const duration = 2000;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(step);
+}
+ 
+const counters = document.querySelectorAll('[data-count]');
+let countersStarted = false;
+function startCounters() {
+  if (countersStarted) return;
+  const hero = document.getElementById('hero');
+  const rect = hero.getBoundingClientRect();
+  if (rect.top <= window.innerHeight) {
+    countersStarted = true;
+    counters.forEach(el => animateCount(el, parseInt(el.dataset.count)));
+  }
+}
+window.addEventListener('scroll', startCounters);
+setTimeout(startCounters, 800);
+ 
+/* ===== SCROLL REVEAL ===== */
+const revealEls = document.querySelectorAll('.reveal, .coach-card, .cat-card, .trofeu-card, .dep-card, .agenda-card, .tl-item');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+revealEls.forEach(el => observer.observe(el));
+ 
+/* ===== GALLERY FILTERS ===== */
+document.querySelectorAll('.gf-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.gf-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+const filter = this.dataset.filter;
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      const cat = item.dataset.category;
+      item.style.opacity = (filter === 'all' || cat === filter) ? '1' : '0.2';
+      item.style.transform = (filter === 'all' || cat === filter) ? '' : 'scale(0.95)';
+    });
+  });
+});
+ 
+/* ===== LIGHTBOX ===== */
+function openLightbox(title, sub) {
+  document.getElementById('lb-title').textContent = title;
+  document.getElementById('lb-sub').textContent = sub;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+document.getElementById('lb-close').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('lightbox')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+ 
+/* ===== TOAST ===== */
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+ 
+/* ===== FORM ===== */
+function handleForm(e) {
+  e.preventDefault();
+  document.getElementById('matricula-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+  showToast('Inscrição enviada com sucesso! 🎉');
+}
+ 
+/* ===== SMOOTH ACTIVE LINK ===== */
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let scrollY = window.scrollY;
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.clientHeight;
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.style.color = '';
+        if (a.getAttribute('href') === '#' + section.id) a.style.color = 'var(--orange)';
+      });
+    }
+  });
+});
+ 
+/* ===== PARALLAX on Hero rings ===== */
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  const ring1 = document.querySelector('.hero-ring1');
+  const ring2 = document.querySelector('.hero-ring2');
+  if (ring1) ring1.style.transform = `translateY(${y * 0.15}px) rotate(${y * 0.02}deg)`;
+  if (ring2) ring2.style.transform = `translateY(${y * 0.08}px) rotate(${-y * 0.01}deg)`;
+});
+</script>
+</body>
+</html>
